@@ -1,0 +1,36 @@
+name: Deploy para Hostinger
+
+# Config COMPROVADA (commit d0dd662): este é o formato que conecta e publica
+# de verdade na Hostinger. NÃO remover o `protocol: ftp` (sem ele o default
+# muda e a conexão dá "Timeout (control socket)") e NÃO trocar o server-dir
+# para /home/<user>/public_html/ — o docroot real servido é /domains/...
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:   # permite rodar manualmente pela aba Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Sincronizar via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./
+          server-dir: /domains/canun.com.br/public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.claude/**
+            **/*.sh
+            **/README.md
+            **/.DS_Store

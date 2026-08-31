@@ -69,6 +69,12 @@
   ],
   "pendencias": [
     {
+      "id": "portfolio-novo",
+      "prioridade": "alta",
+      "titulo": "Enviar o portfólio atualizado (PDF) — bloqueia 2 pedidos da cliente",
+      "detalhe": "A cliente disse em áudio que mandou a versão nova do portfólio, com serviços acrescentados. Procurei em toda a pasta do Drive do Canun (233 arquivos) e nas tasks do ClickUp da pasta 'Canun Sistemas Construtivos' — só existe o Portfolio_Canun_Manutencao_Preventiva (1).pdf, de 6 páginas úteis, que já foi usado. Sem o arquivo novo não dá para (a) conferir o portfólio atualizado nem (b) acrescentar os serviços novos, porque eu teria de inventar o escopo deles."
+    },
+    {
       "id": "telefone",
       "prioridade": "alta",
       "titulo": "Confirmar o WhatsApp da campanha",
@@ -149,6 +155,18 @@
       "decisao": "Duas pastas de deploy no lugar de uma: deploy-vercel/ e deploy-wordpress/public_html/manutencao-preventiva/. Um sync-deploy.py na raiz regenera as duas a partir de Site/, para não divergirem.",
       "origem": "cliente",
       "nota": "O site atual em canun.com.br não é WordPress — é PHP próprio. A pasta WordPress foi criada conforme pedido; se o destino for o site atual, o procedimento é o mesmo e o RewriteEngine Off do .htaccess pode ser dispensado."
+    },
+    {
+      "data": "2026-08-31",
+      "decisao": "Instalações de Gás passou de BIENAL para ANUAL no cronograma técnico (HTML, CSS e copy de referência). A frequência 'Bienal' deixou de existir na LP — restam Semestral e Anual.",
+      "origem": "cliente (áudio)",
+      "nota": "A cliente esclareceu que o plano é anual e renovável anualmente; não existe plano bienal nem trienal."
+    },
+    {
+      "data": "2026-08-31",
+      "decisao": "Removido o número da casa (804) da foto da residência azul, por pedido do proprietário e proteção de dados.",
+      "origem": "cliente (áudio)",
+      "nota": "Retoque feito sobre o original em alta do PDF (1093x1717): clonagem da textura de madeira adjacente com máscara suavizada. Original preservado; a versão limpa ficou em paginas-portfilotio/_extraidas/p1_x13_sem-numero.png. A cliente informou que o portfólio novo já traz a foto sem o número — se o arquivo chegar, vale trocar pela original limpa."
     }
   ],
   "links": {

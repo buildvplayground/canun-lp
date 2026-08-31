@@ -109,6 +109,15 @@ para outro domínio, atualizar canonical e `og:url` no `index.html`.
 > ser um WP; indo para o site atual, o procedimento é o mesmo e o `RewriteEngine Off`
 > pode ser dispensado.
 
+## Correções do cliente (31/08/2026)
+
+| Pedido | Estado |
+|---|---|
+| Gás: bienal → anual (cronograma) | ✅ feito — a LP só tem Semestral e Anual agora |
+| Remover o número da casa azul (804) | ✅ feito — retoque sobre o original em alta |
+| Analisar o portfólio atualizado | ⛔ bloqueado — arquivo não localizado |
+| Acrescentar os serviços novos | ⛔ bloqueado — dependem do portfólio novo |
+
 ## Pendências
 
 Ver a lista completa e acionável em [state.json](state.json) → `pendencias`.

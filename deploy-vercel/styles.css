@@ -386,7 +386,6 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--blue-100); color: var(--blue-700); white-space: nowrap;
 }
 .crono__freq[data-freq="anual"] { background: var(--orange-100); color: var(--orange-800); }
-.crono__freq[data-freq="bienal"] { background: var(--gray-100); color: var(--gray-600); }
 .crono__sys { font-size: 18px; font-weight: 700; color: var(--blue-950); letter-spacing: -.3px; line-height: 1.35; }
 .crono__act { font-size: 15.5px; color: var(--gray-600); line-height: 1.6; }
 .crono__note {

@@ -1,0 +1,43 @@
+# ============================================================
+# LP Manutenção Preventiva — Canun
+# Página estática servida de dentro de public_html/ de um WordPress.
+# ============================================================
+
+# CRÍTICO: o .htaccess do WordPress na raiz de public_html/ reescreve toda
+# requisição que não seja arquivo/diretório existente para o index.php.
+# Sem desligar o rewrite aqui, o WP intercepta esta pasta e devolve 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>
+
+DirectoryIndex index.html
+
+# ---------- Tipos ----------
+AddType image/webp .webp
+
+# ---------- Compressão ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------- Cache ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType text/css               "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
+
+# ---------- Cabeçalhos ----------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always unset X-Powered-By
+</IfModule>
+
+# ---------- Não listar diretório ----------
+Options -Indexes

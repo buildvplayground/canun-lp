@@ -126,12 +126,10 @@
     var buttons = Array.prototype.slice.call(gallery.querySelectorAll('.gal'));
     var items = buttons.map(function (btn) {
       var img = btn.querySelector('img');
-      var cap = btn.querySelector('.gal__veil span');
-      return { src: img.getAttribute('src'), alt: img.getAttribute('alt'), title: cap ? cap.textContent : '' };
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
     });
 
     var lbImg = document.getElementById('lbImg');
-    var lbTitle = document.getElementById('lbTitle');
     var lbCounter = document.getElementById('lbCounter');
     var lbClose = document.getElementById('lbClose');
     var lbPrev = document.getElementById('lbPrev');
@@ -145,7 +143,6 @@
       var it = items[current];
       lbImg.setAttribute('src', it.src);
       lbImg.setAttribute('alt', it.alt);
-      lbTitle.textContent = it.title;
       lbCounter.textContent = (current + 1) + ' / ' + items.length;
     }
 
@@ -227,6 +224,43 @@
     });
   }
 
+  /* ---------- Widget Merlin ----------
+     1) O script de terceiro injeta um <button> só com <img> e sem rótulo, e pode
+        remontar o nó — um observer garante a correção em qualquer render.
+     2) Todos os CTAs de ação abrem o popup do Merlin. O href de WhatsApp continua
+        no HTML como fallback: se o script do Merlin não carregar, o botão ainda
+        funciona em vez de virar um link morto. */
+  (function () {
+    var CTAS = '[data-merlin]';
+
+    function botaoMerlin() { return document.querySelector('.merlin-button'); }
+
+    function rotular() {
+      var btn = botaoMerlin();
+      if (!btn) return false;
+      if (!btn.getAttribute('aria-label')) btn.setAttribute('aria-label', 'Abrir formulário de contato da Canun');
+      if (!btn.getAttribute('type')) btn.setAttribute('type', 'button');
+      var ico = btn.querySelector('img');
+      if (ico && !ico.hasAttribute('alt')) ico.setAttribute('alt', '');
+      return true;
+    }
+
+    // Delegação: pega inclusive CTAs que entram depois (menu mobile).
+    document.addEventListener('click', function (e) {
+      var cta = e.target.closest && e.target.closest(CTAS);
+      if (!cta) return;
+      var btn = botaoMerlin();
+      if (!btn) return;            // sem Merlin, segue para o WhatsApp do href
+      e.preventDefault();
+      btn.click();
+    });
+
+    rotular();
+    if ('MutationObserver' in window) {
+      new MutationObserver(rotular).observe(document.documentElement, { childList: true, subtree: true });
+    }
+  })();
+
   /* ---------- Cookie bar (LGPD) ---------- */
   var cookieBar = document.getElementById('cookieBar');
   var STORAGE_KEY = 'canun_lp_cookie_consent';
@@ -241,7 +275,10 @@
     try { saved = window.localStorage.getItem(STORAGE_KEY); } catch (err) { saved = null; }
 
     if (!saved) {
-      window.setTimeout(function () { cookieBar.classList.add('is-visible'); }, 900);
+      window.setTimeout(function () {
+        cookieBar.classList.add('is-visible');
+        document.body.classList.add('cookie-open');
+      }, 900);
     } else {
       pushConsent(saved);
     }
@@ -250,6 +287,7 @@
       try { window.localStorage.setItem(STORAGE_KEY, value); } catch (err) { /* modo privado */ }
       pushConsent(value);
       cookieBar.classList.remove('is-visible');
+      document.body.classList.remove('cookie-open');
     }
 
     document.getElementById('cookieAccept').addEventListener('click', function () { decide('granted'); });

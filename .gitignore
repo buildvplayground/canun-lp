@@ -1,3 +1,4 @@
+# Só a pasta deploy/ (o entregável da LP) + o estado do projeto vão para o git.
 # ==== Material-fonte (fica local + Drive, nunca no git) ====
 _raw/
 imagens/

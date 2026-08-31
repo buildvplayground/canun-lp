@@ -164,6 +164,12 @@
     },
     {
       "data": "2026-08-31",
+      "decisao": "A resposta do FAQ sobre frequência de revisão também passou a tratar Instalações de Gás como ANUAL, alinhada ao cronograma técnico.",
+      "origem": "cliente (ClickUp 86ak8vr0t)",
+      "nota": "O texto dizia 'e instalações de gás, a cada dois anos' — a frequência bienal escrita em palavras, sem a palavra 'bienal', o que a fez escapar da correção do commit a04785d. A frase foi reescrita juntando o gás à lista dos anuais, sem repetir 'anualmente' duas vezes. Ao revisar frequências, buscar também as formas escritas."
+    },
+    {
+      "data": "2026-08-31",
       "decisao": "Removido o número da casa (804) da foto da residência azul, por pedido do proprietário e proteção de dados.",
       "origem": "cliente (áudio)",
       "nota": "Retoque feito sobre o original em alta do PDF (1093x1717): clonagem da textura de madeira adjacente com máscara suavizada. Original preservado; a versão limpa ficou em paginas-portfilotio/_extraidas/p1_x13_sem-numero.png. A cliente informou que o portfólio novo já traz a foto sem o número — se o arquivo chegar, vale trocar pela original limpa."

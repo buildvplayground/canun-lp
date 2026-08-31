@@ -113,10 +113,16 @@ para outro domínio, atualizar canonical e `og:url` no `index.html`.
 
 | Pedido | Estado |
 |---|---|
-| Gás: bienal → anual (cronograma) | ✅ feito — a LP só tem Semestral e Anual agora |
+| Gás: bienal → anual (cronograma **e FAQ**) | ✅ feito — a LP só tem Semestral e Anual agora |
 | Remover o número da casa azul (804) | ✅ feito — retoque sobre o original em alta |
 | Analisar o portfólio atualizado | ⛔ bloqueado — arquivo não localizado |
 | Acrescentar os serviços novos | ⛔ bloqueado — dependem do portfólio novo |
+
+O cronograma e o FAQ foram corrigidos em momentos diferentes: o cronograma no commit
+`a04785d` e o FAQ na ClickUp `86ak8vr0t`, que pedia explicitamente "verificar na página
+**e no FAQ**". A resposta do FAQ ainda dizia "instalações de gás, a cada dois anos" —
+escrito em palavras, sem a palavra "bienal", por isso não apareceu na varredura anterior.
+Ao revisar frequências, buscar também as formas escritas ("a cada dois anos").
 
 ## Pendências
 

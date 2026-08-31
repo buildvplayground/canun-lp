@@ -281,7 +281,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============================ RISCOS ============================ */
 .risk-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 .risk {
@@ -369,7 +369,7 @@ button { font-family: inherit; cursor: pointer; }
 .crono__note strong { color: var(--blue-950); }
 
 /* ============================ PROCESSO ============================ */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); gap: 22px; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .step { position: relative; padding-top: 30px; }
 .step::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -420,7 +420,7 @@ button { font-family: inherit; cursor: pointer; }
 .plans__note { margin-top: 26px; font-size: 14px; color: var(--gray-500); line-height: 1.6; max-width: 860px; }
 
 /* ============================ FORA DA BASE ============================ */
-.outside { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.outside { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .outside__card {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14);
   border-radius: 16px; padding: 30px 26px;
@@ -580,6 +580,7 @@ button { font-family: inherit; cursor: pointer; }
 .privacy__close svg { width: 18px; height: 18px; }
 .privacy__body { padding: 26px 28px 32px; overflow-y: auto; font-size: 15px; color: var(--gray-600); line-height: 1.7; }
 .privacy__body h3 { font-size: 16px; color: var(--blue-950); margin: 24px 0 8px; }
+.privacy__body strong { color: var(--blue-950); }
 .privacy__body h3:first-child { margin-top: 0; }
 .privacy__body p, .privacy__body ul { margin-bottom: 12px; }
 .privacy__body ul { padding-left: 20px; }
@@ -636,6 +637,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ============================ RESPONSIVO ============================ */
+@media (max-width: 1100px) {
+  /* 4 itens: 3 colunas deixaria 1 card órfão — vai direto para 2x2 */
+  .risk-grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  /* 3 itens: melhor empilhar do que deixar um órfão numa grade de 2 */
+  .outside { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: 1fr; }
   .hero__media { order: -1; }
@@ -656,8 +667,20 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  :root { --header-h: 66px; }
+  :root { --header-h: 66px; --pad: 18px; }
+  /* display muito justo em telas estreitas: 1.05 gera colisão entre ascendente e descendente */
+  .hero h1 { line-height: 1.12; letter-spacing: -.9px; }
+  .h2 { line-height: 1.15; letter-spacing: -.6px; }
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 34px; }
+  /* letter-spacing largo empurrava o eyebrow para 3 linhas em 375px */
+  .eyebrow { font-size: 11.5px; letter-spacing: 1.5px; gap: 9px; }
+  .eyebrow::before { width: 20px; }
+  /* caption uppercase de 1.1px estourava o botão em 2 linhas desequilibradas */
+  .btn { letter-spacing: .5px; padding: 16px 22px; }
+  .btn--lg { padding: 18px 24px; font-size: 14.5px; }
   .header__logo img { height: 28px; }
+  .risk-grid, .steps { grid-template-columns: 1fr; }
   .hero__metrics { grid-template-columns: 1fr; gap: 20px; text-align: left; }
   .hero__actions .btn { width: 100%; }
   .hero__badge {
@@ -683,4 +706,17 @@ button { font-family: inherit; cursor: pointer; }
   .pos-item { grid-template-columns: 46px 1fr; gap: 12px; }
   .plan__badge { left: 22px; }
   .plan { padding: 32px 24px 30px; }
+}
+
+/* ---------- CTA intermediário do cronograma ---------- */
+.crono__cta {
+  margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center;
+  gap: 20px 26px; justify-content: space-between;
+  background: var(--white); border: 1px solid var(--blue-200); border-radius: 16px;
+  padding: 26px 28px;
+}
+.crono__cta p { font-size: clamp(16px, 1.7vw, 19px); color: var(--blue-950); font-weight: 700; letter-spacing: -.3px; max-width: 520px; line-height: 1.4; }
+@media (max-width: 560px) {
+  .crono__cta { flex-direction: column; align-items: stretch; text-align: left; padding: 22px; }
+  .crono__cta .btn { width: 100%; }
 }

@@ -1,8 +1,0 @@
-# Canun Sistemas Construtivos
-# Permite indexação das páginas públicas e protege áreas sensíveis.
-
-User-agent: *
-Allow: /
-Disallow: /admin.php
-Disallow: /form-handler.php
-Disallow: /uploads/

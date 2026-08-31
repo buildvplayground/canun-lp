@@ -1,0 +1,22 @@
+# ==== Material-fonte (fica local + Drive, nunca no git) ====
+_raw/
+imagens/
+paginas-portfilotio/
+canun-site-principal/
+Copys/
+design-system/
+Site/
+brief-pack.md
+
+# ==== Segredos ====
+db-config.php
+*.env
+.env*
+!*.example
+
+# ==== Sistema / editor ====
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+*.log

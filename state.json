@@ -1,0 +1,56 @@
+{
+  "projeto": "canun-lp",
+  "cliente": "Canun Sistemas Construtivos",
+  "titulo": "LP — Manutenção Preventiva Residencial",
+  "tipo": "landing-page",
+  "atualizado_em": "2026-08-31",
+  "etapa_atual": 8,
+  "etapas": [
+    { "n": 1, "nome": "Material bruto", "status": "done",
+      "nota": "Origem local (pasta do projeto) + 3 pastas do Drive indicadas pelo usuário. Portfólio PDF (9 pág.) + 9 peças de campanha + site institucional." },
+    { "n": 2, "nome": "Organizar pastas", "status": "done",
+      "nota": "Site/, deploy-vercel/, design-system/, Copys/, imagens/tratadas/, .gitignore seguro." },
+    { "n": "2b", "nome": "Repositório GitHub", "status": "done",
+      "nota": "Repo já existia: dev-buildv/canun-lp (privado)." },
+    { "n": 3, "nome": "Design system", "status": "done",
+      "nota": "Tokens herdados do site institucional (azul #0D1A3E + laranja #F08526, Helvetica Neue). Token --orange-800 adicionado para texto AA sobre fundo claro. design-system/direcao-estilo.md." },
+    { "n": 4, "nome": "Copy", "status": "done",
+      "nota": "Extraída do portfólio PDF + peças de campanha. Copys/lp-manutencao-preventiva.md. Zero fato inventado. 3 discrepâncias registradas." },
+    { "n": 5, "nome": "Front-end", "status": "done",
+      "nota": "HTML+CSS+JS vanilla. 11 seções, 11 CTAs WhatsApp, galeria 12 fotos com lightbox." },
+    { "n": 6, "nome": "Ajustes finais e auditoria", "status": "done",
+      "nota": "Overflow horizontal 0 em 320/360/375/414/768/1024/1280/1440/1920. 23 checks de interação/a11y PASS. Contraste AA verificado por medição de pixel. Imagens webp: 1,35 MB / 16 arquivos." },
+    { "n": 7, "nome": "Módulos LGPD e tags", "status": "done",
+      "nota": "Banner de cookies + Política de Privacidade em modal + evento cookie_consent no dataLayer. GTM/Merlin NÃO instalados — dependem de decisão do cliente (ver pendências)." },
+    { "n": 8, "nome": "Revisão humana", "status": "doing",
+      "nota": "Preview local em http://localhost:8899/. Aguardando revisão do usuário e definição de domínio/rota." },
+    { "n": 9, "nome": "Deploy", "status": "blocked",
+      "nota": "deploy-vercel/ pronta. Falta definir hospedagem (subpasta do site Hostinger vs. Vercel) e o domínio/rota." }
+  ],
+  "pendencias": [
+    { "id": "telefone", "prioridade": "alta", "titulo": "Confirmar o WhatsApp da campanha",
+      "detalhe": "O portfólio PDF (pág. 1 e 9) e o carrossel usam (53) 99146-3131; o flyer A4 e o hero de oferta usam (53) 99118-7976. Adotado o do PDF oficial em todos os 11 CTAs. Confirmar qual é o número de atendimento da campanha." },
+    { "id": "preco-entrada", "prioridade": "alta", "titulo": "Confirmar o preço de entrada",
+      "detalhe": "O flyer A4 diz 'a partir de R$ 100/mês'; o PDF e os heros dizem 'a partir de R$ 150/mês' (Essencial R$ 150–250). Adotado R$ 150–250." },
+    { "id": "data-oferta", "prioridade": "alta", "titulo": "Nova data para a oferta das 20 vagas",
+      "detalhe": "A LP exibe 'Até 15/09', vindo do material de campanha — data já vencida. Trocar antes de publicar. Marcado com comentário no HTML (seção #oferta)." },
+    { "id": "hospedagem", "prioridade": "alta", "titulo": "Definir onde a LP fica",
+      "detalhe": "Opção A: subpasta do site atual no Hostinger (ex.: canun.com.br/manutencao-preventiva/) — o <link rel=canonical> já aponta para lá. Opção B: projeto separado no Vercel com Root Directory = deploy-vercel. Decidir para fechar o deploy." },
+    { "id": "gtm", "prioridade": "media", "titulo": "GTM da LP",
+      "detalhe": "Não instalado. Confirmar se usa o mesmo container do site institucional (GTM-WD7GJQPC) ou um novo, para medir a campanha em separado. Marcado com comentário no <head>." },
+    { "id": "merlin", "prioridade": "baixa", "titulo": "Popup Merlin",
+      "detalhe": "Não instalado nesta LP. O site institucional usa Merlin como CTA; aqui o CTA é WhatsApp direto (padrão BuildV + o que a campanha promete). Confirmar se o cliente quer o popup também." },
+    { "id": "fotos-alta", "prioridade": "media", "titulo": "Fotos em alta resolução",
+      "detalhe": "As imagens vieram do portfólio e do acervo do site (já otimizadas). O cliente informou que enviará versões em maior resolução — substituir mantendo os mesmos nomes de arquivo em Site/assets/img/." }
+  ],
+  "links": {
+    "repo": "https://github.com/dev-buildv/canun-lp",
+    "preview_local": "http://localhost:8899/",
+    "drive_obras": [
+      "https://drive.google.com/drive/folders/1tXYPjXh-yg5Mud0dqLu736dZeZVtvFHV",
+      "https://drive.google.com/drive/folders/10UUengKs1pNAbQyVzEtUXxv2pRmLs2q5",
+      "https://drive.google.com/drive/folders/1gA3JR-6pExrcn7bUxtQwsXBF12n3ztSQ"
+    ],
+    "dominio": null
+  }
+}

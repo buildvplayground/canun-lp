@@ -5,7 +5,8 @@ a partir dos slides da apresentação comercial "Manutenção Preventiva Residen
 
 - **Cliente:** Canun Sistemas Construtivos — Pelotas/RS
 - **Repo:** https://github.com/dev-buildv/canun-lp (privado)
-- **Entregável:** [deploy/](deploy/) — pasta exclusiva da LP, ver [deploy/README.md](deploy/README.md)
+- **Entregáveis:** [deploy-vercel/](deploy-vercel/) e [deploy-wordpress/](deploy-wordpress/) —
+  cada uma completa e exclusiva da LP. Regeradas por `python sync-deploy.py`; nunca editar à mão.
 - **Preview local:** `python -m http.server 8899` dentro de `Site/` → http://localhost:8899/
 - **Estado de máquina:** [state.json](state.json)
 
@@ -14,7 +15,7 @@ a partir dos slides da apresentação comercial "Manutenção Preventiva Residen
 - [x] **1. Material** — portfólio PDF (9 slides), 9 peças de campanha, site institucional
       (`canun-site-principal/`) e 3 pastas de obras no Drive (Xangrilá, Cassino Beira Mar,
       Edícula Steel Frame).
-- [x] **2. Estrutura** — `Site/` (working), `deploy/` (entregável exclusivo da LP), `design-system/`,
+- [x] **2. Estrutura** — `Site/` (working), duas pastas de deploy, `design-system/`,
       `Copys/`, `imagens/tratadas/`, `.gitignore` seguro.
 - [x] **2b. Repositório** — já existia (`dev-buildv/canun-lp`).
 - [x] **3. Design system** — [design-system/direcao-estilo.md](design-system/direcao-estilo.md)
@@ -89,6 +90,24 @@ Desvios de cor em relação ao institucional, ambos por acessibilidade:
 
 Testado com Playwright/Chromium. Scripts em
 `%TEMP%/claude/.../scratchpad/{audit,sweep,interact,wcag,contrast,pixel4,design,mobile}.js`.
+
+## Deploy
+
+A fonte é sempre `Site/`. `python sync-deploy.py` regenera as duas pastas — cada uma
+preserva os arquivos que são só dela (`README.md`, `vercel.json`, `robots.txt`, `.htaccess`).
+
+| Alvo | Pasta | Como publicar |
+|---|---|---|
+| **Vercel** | `deploy-vercel/` | Root Directory = `deploy-vercel`, preset **Other**, sem build. Ou `vercel --prod` dentro da pasta. |
+| **WordPress** | `deploy-wordpress/public_html/manutencao-preventiva/` | Subir a pasta para dentro do `public_html/` do host. O `.htaccess` traz `RewriteEngine Off` — sem ele o WordPress engole a subpasta e devolve 404. |
+
+O `<link rel="canonical">` aponta para `canun.com.br/manutencao-preventiva/`. Se a LP for
+para outro domínio, atualizar canonical e `og:url` no `index.html`.
+
+> O site atual em canun.com.br **não é WordPress** — é PHP próprio (`admin.php`,
+> `form-handler.php`, `db-config.php`). A pasta WordPress existe para o caso de o destino
+> ser um WP; indo para o site atual, o procedimento é o mesmo e o `RewriteEngine Off`
+> pode ser dispensado.
 
 ## Pendências
 

@@ -123,38 +123,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="risk-grid">
       <article class="risk reveal">
-        <div class="risk__media"><img src="assets/img/risco-cobertura.webp" alt="Cobertura com estrutura de vigas aparentes e telhado translúcido em obra da Canun" loading="lazy" decoding="async" width="900" height="675"></div>
-        <div class="risk__body">
-          <span class="risk__tag">Cobertura &amp; Pluvial</span>
-          <h3>Calhas, telhas e rufos</h3>
-          <p>Acúmulo de folhas, ferrugem e silicone ressecado nos rufos são a porta de entrada da maioria das infiltrações ocultas em forros e paredes.</p>
-        </div>
+        <div class="risk__media"><img src="assets/img/risco-cobertura.webp" alt="Cobertura com estrutura de vigas aparentes e telhado translúcido em obra da Canun" loading="lazy" decoding="async" width="900" height="506"></div>
+        <span class="risk__tag">Cobertura &amp; Pluvial</span>
+        <h3>Calhas, telhas e rufos</h3>
+        <p>Folhas, ferrugem e silicone ressecado nos rufos — a porta de entrada da maioria das infiltrações ocultas.</p>
       </article>
       <article class="risk reveal" data-delay="1">
-        <div class="risk__media"><img src="assets/img/risco-hidrossanitario.webp" alt="Banheiro em obra entregue pela Canun — área fria sujeita a microvazamentos" loading="lazy" decoding="async" width="900" height="675"></div>
-        <div class="risk__body">
-          <span class="risk__tag">Hidrossanitário</span>
-          <h3>Vazamentos silenciosos</h3>
-          <p>Microvazamentos em válvulas e caixas acopladas passam despercebidos por meses — e aparecem só na conta de água ou no mofo.</p>
-        </div>
+        <div class="risk__media"><img src="assets/img/risco-hidrossanitario.webp" alt="Banheiro em obra entregue pela Canun — área fria sujeita a microvazamentos" loading="lazy" decoding="async" width="900" height="506"></div>
+        <span class="risk__tag">Hidrossanitário</span>
+        <h3>Vazamentos silenciosos</h3>
+        <p>Passam meses despercebidos em válvulas e caixas acopladas. Aparecem na conta de água ou no mofo.</p>
       </article>
       <article class="risk reveal" data-delay="2">
-        <div class="risk__media"><img src="assets/img/risco-eletrica.webp" alt="Forro de madeira com trilho de iluminação em residência entregue pela Canun" loading="lazy" decoding="async" width="900" height="675"></div>
-        <div class="risk__body">
-          <span class="risk__tag">Instalações Elétricas</span>
-          <h3>Pontos quentes na fiação</h3>
-          <p>Bornes frouxos no quadro de distribuição geram calor, consomem mais energia e são uma das principais causas de incêndio residencial.</p>
-        </div>
+        <div class="risk__media"><img src="assets/img/risco-eletrica.webp" alt="Forro de madeira com trilho de iluminação em residência entregue pela Canun" loading="lazy" decoding="async" width="900" height="506"></div>
+        <span class="risk__tag">Instalações Elétricas</span>
+        <h3>Pontos quentes na fiação</h3>
+        <p>Bornes frouxos no quadro geram calor e são uma das principais causas de incêndio residencial.</p>
       </article>
       <article class="risk reveal" data-delay="3">
-        <div class="risk__media"><img src="assets/img/risco-fachada.webp" alt="Fachada ripada em madeira com juntas e selagens expostas ao tempo" loading="lazy" decoding="async" width="900" height="675"></div>
-        <div class="risk__body">
-          <span class="risk__tag">Vedações &amp; Fachadas</span>
-          <h3>Fissuras e selagens</h3>
-          <p>Trincas em fachadas e juntas mal seladas — especialmente em áreas com placas e frame — evoluem de estética para estrutural se ignoradas.</p>
-        </div>
+        <div class="risk__media"><img src="assets/img/risco-fachada.webp" alt="Fachada ripada em madeira com juntas e selagens expostas ao tempo" loading="lazy" decoding="async" width="900" height="506"></div>
+        <span class="risk__tag">Vedações &amp; Fachadas</span>
+        <h3>Fissuras e selagens</h3>
+        <p>Trincas e juntas mal seladas evoluem de estética para estrutural se ignoradas.</p>
       </article>
     </div>
+
     <div class="stat-band reveal">
       <span class="stat-band__num" data-count="4" data-suffix="x">4x</span>
       <p>Prevenir custa, em média, até 4 vezes menos do que remediar. Um reaperto no quadro elétrico custa uma fração do que é refazer uma fiação queimada ou um forro de gesso destruído por infiltração.</p>
@@ -473,7 +466,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button class="lb__nav lb__next" id="lbNext" type="button" aria-label="Próxima foto">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
   </button>
-  <div class="lb__stage"><img class="lb__img" id="lbImg" src="" alt=""></div>
+  <!-- sem src inicial: <img src=""> faz o navegador requisitar o próprio documento -->
+  <div class="lb__stage"><img class="lb__img" id="lbImg" alt=""></div>
   <div class="lb__footer">
     <span class="lb__counter" id="lbCounter"></span>
   </div>

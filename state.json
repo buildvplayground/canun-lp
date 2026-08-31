@@ -64,7 +64,7 @@
       "n": 9,
       "nome": "Deploy",
       "status": "blocked",
-      "nota": "Pasta deploy/ pronta e exclusiva da LP (índice, css, js, assets, robots, vercel.json e README com as instruções dos dois alvos). Falta definir hospedagem e domínio/rota."
+      "nota": "Duas pastas de deploy, cada uma completa e exclusiva da LP: deploy-vercel/ (raiz do domínio, com vercel.json e robots.txt) e deploy-wordpress/public_html/manutencao-preventiva/ (subpasta estática dentro do public_html de um WordPress, com .htaccess que desliga o rewrite do WP). Ambas geradas por sync-deploy.py a partir de Site/. Falta definir hospedagem e domínio/rota."
     }
   ],
   "pendencias": [
@@ -78,7 +78,7 @@
       "id": "hospedagem",
       "prioridade": "alta",
       "titulo": "Definir onde a LP fica",
-      "detalhe": "Opção A: subpasta do site atual no Hostinger (canun.com.br/manutencao-preventiva/) — o <link rel=canonical> já aponta para lá. Opção B: Vercel com Root Directory = deploy. Instruções das duas no deploy/README.md."
+      "detalhe": "Vercel → importar o repo com Root Directory = deploy-vercel, preset Other. WordPress/Hostinger → subir deploy-wordpress/public_html/manutencao-preventiva/ para dentro do public_html. Instruções completas no README de cada pasta. Atenção: o canonical aponta para canun.com.br/manutencao-preventiva/ — se o destino for outro domínio, atualizar canonical e og:url no index.html."
     },
     {
       "id": "fotos-alta",
@@ -143,6 +143,12 @@
       "data": "2026-08-31",
       "decisao": "Pasta de deploy renomeada de deploy-vercel/ para deploy/, exclusiva da LP, com README próprio.",
       "origem": "cliente"
+    },
+    {
+      "data": "2026-08-31",
+      "decisao": "Duas pastas de deploy no lugar de uma: deploy-vercel/ e deploy-wordpress/public_html/manutencao-preventiva/. Um sync-deploy.py na raiz regenera as duas a partir de Site/, para não divergirem.",
+      "origem": "cliente",
+      "nota": "O site atual em canun.com.br não é WordPress — é PHP próprio. A pasta WordPress foi criada conforme pedido; se o destino for o site atual, o procedimento é o mesmo e o RewriteEngine Off do .htaccess pode ser dispensado."
     }
   ],
   "links": {

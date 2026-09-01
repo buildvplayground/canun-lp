@@ -115,8 +115,9 @@ para outro domínio, atualizar canonical e `og:url` no `index.html`.
 |---|---|
 | Gás: bienal → anual (cronograma **e FAQ**) | ✅ feito — a LP só tem Semestral e Anual agora |
 | Remover o número da casa azul (804) | ✅ feito — retoque sobre o original em alta |
-| Analisar o portfólio atualizado | ⛔ bloqueado — arquivo não localizado |
-| Acrescentar os serviços novos | ⛔ bloqueado — dependem do portfólio novo |
+| Analisar o portfólio atualizado | ✅ feito — 10 páginas, revisado linha a linha |
+| Acrescentar os serviços novos | ✅ feito — Placas Solares e Marcenaria no cronograma + seção "Vantagem para assinantes" |
+| Telefone oficial | ✅ resolvido — o portfólio novo usa **(53) 99118-7976** |
 
 O cronograma e o FAQ foram corrigidos em momentos diferentes: o cronograma no commit
 `a04785d` e o FAQ na ClickUp `86ak8vr0t`, que pedia explicitamente "verificar na página

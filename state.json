@@ -3,7 +3,7 @@
   "cliente": "Canun Sistemas Construtivos",
   "titulo": "LP — Manutenção Preventiva Residencial",
   "tipo": "landing-page",
-  "atualizado_em": "2026-08-31",
+  "atualizado_em": "2026-09-01",
   "etapa_atual": 8,
   "etapas": [
     {
@@ -69,18 +69,6 @@
   ],
   "pendencias": [
     {
-      "id": "portfolio-novo",
-      "prioridade": "alta",
-      "titulo": "Enviar o portfólio atualizado (PDF) — bloqueia 2 pedidos da cliente",
-      "detalhe": "A cliente disse em áudio que mandou a versão nova do portfólio, com serviços acrescentados. Procurei em toda a pasta do Drive do Canun (233 arquivos) e nas tasks do ClickUp da pasta 'Canun Sistemas Construtivos' — só existe o Portfolio_Canun_Manutencao_Preventiva (1).pdf, de 6 páginas úteis, que já foi usado. Sem o arquivo novo não dá para (a) conferir o portfólio atualizado nem (b) acrescentar os serviços novos, porque eu teria de inventar o escopo deles."
-    },
-    {
-      "id": "telefone",
-      "prioridade": "alta",
-      "titulo": "Confirmar o WhatsApp da campanha",
-      "detalhe": "O portfólio PDF (pág. 1 e 9) e o carrossel usam (53) 99146-3131; o flyer A4 e o hero de oferta usam (53) 99118-7976. Com os CTAs abrindo o Merlin, o número aparece agora só no rodapé de canais e como fallback dos CTAs — mas ainda precisa ser confirmado."
-    },
-    {
       "id": "hospedagem",
       "prioridade": "alta",
       "titulo": "Definir onde a LP fica",
@@ -91,6 +79,12 @@
       "prioridade": "media",
       "titulo": "Fotos em alta resolução",
       "detalhe": "As imagens vieram do portfólio e do acervo do site (já otimizadas). O cliente enviará versões em maior resolução — substituir mantendo os mesmos nomes de arquivo em Site/assets/img/. As 3 fotos full-bleed (bleed-hero, bleed-cobertura, bleed-contato) são as que mais ganham com isso."
+    },
+    {
+      "id": "oferta-campanha",
+      "prioridade": "media",
+      "titulo": "A campanha das 20 vagas por R$ 300 ainda vale?",
+      "detalhe": "O portfólio atualizado tabela a avaliação técnica por metragem (R$ 500 até 100 m², R$ 800 de 101 a 250 m², R$ 1.000 de 251 a 400 m², acima disso consulte) e não menciona a condição de R$ 300 para 20 vagas, que veio das peças de campanha de agosto e tinha prazo em 15/09. A seção de oferta já não está na LP; confirmar se a campanha foi encerrada ou se volta com nova data e valor."
     }
   ],
   "decisoes": [
@@ -164,9 +158,43 @@
     },
     {
       "data": "2026-08-31",
+      "decisao": "A resposta do FAQ sobre frequência de revisão também passou a tratar Instalações de Gás como ANUAL, alinhada ao cronograma técnico.",
+      "origem": "cliente (ClickUp 86ak8vr0t)",
+      "nota": "O texto dizia 'e instalações de gás, a cada dois anos' — a frequência bienal escrita em palavras, sem a palavra 'bienal', o que a fez escapar da correção do commit a04785d. A frase foi reescrita juntando o gás à lista dos anuais, sem repetir 'anualmente' duas vezes. Ao revisar frequências, buscar também as formas escritas."
+    },
+    {
+      "data": "2026-08-31",
       "decisao": "Removido o número da casa (804) da foto da residência azul, por pedido do proprietário e proteção de dados.",
       "origem": "cliente (áudio)",
       "nota": "Retoque feito sobre o original em alta do PDF (1093x1717): clonagem da textura de madeira adjacente com máscara suavizada. Original preservado; a versão limpa ficou em paginas-portfilotio/_extraidas/p1_x13_sem-numero.png. A cliente informou que o portfólio novo já traz a foto sem o número — se o arquivo chegar, vale trocar pela original limpa."
+    },
+    {
+      "data": "2026-09-01",
+      "decisao": "Aplicado o portfólio atualizado (10 páginas) recebido da cliente.",
+      "origem": "cliente",
+      "nota": "Telefone oficial passou a ser (53) 99118-7976 — o portfólio novo usa esse número na capa e no fechamento, o que encerra a divergência com o 99146-3131 do material antigo."
+    },
+    {
+      "data": "2026-09-01",
+      "decisao": "Cronograma ganhou Placas Solares e Marcenaria (ambos anuais) e a nota de que materiais de troca são por conta do cliente.",
+      "origem": "portfólio atualizado"
+    },
+    {
+      "data": "2026-09-01",
+      "decisao": "Nova seção 'Vantagem para assinantes': Pinturas, Marido de Aluguel e Marcenaria, com prioridade e 20% de desconto, mais o fluxo de 3 passos.",
+      "origem": "portfólio atualizado"
+    },
+    {
+      "data": "2026-09-01",
+      "decisao": "Removidas as menções a câmera térmica, teste de corante e teste de estanqueidade como equipamento de vistoria.",
+      "origem": "portfólio atualizado",
+      "nota": "O portfólio novo descreve a vistoria como 'minuciosa, com checklist específico por sistema construtivo'. Manter o equipamento seria alegar capacidade que o material do cliente não sustenta."
+    },
+    {
+      "data": "2026-09-01",
+      "decisao": "Preços de plano e de avaliação NÃO entraram na LP.",
+      "origem": "decisão de escopo",
+      "nota": "A seção de planos foi retirada pelo cliente no commit fee2330; a LP hoje não cita valores nem nomes de plano. O portfólio novo traz a tabela (Essencial R$100 / Premium R$200 / Master R$300, até 100/250/400 m²) caso se decida reintroduzir."
     }
   ],
   "links": {
